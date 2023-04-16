@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="NoteHub.Project.AppShell"
+       xmlns:views="clr-namespace:NoteHub.Project.Views;assembly=NoteHub.Project">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TabBarStyle" TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#CBF5AF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="#252D20" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#789167" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar Style="{StaticResource TabBarStyle}">
+        <ShellContent
+            Title="Notes"
+            Icon="notes.png"
+            ContentTemplate="{DataTemplate views:NotesPage}" />
+        <ShellContent
+            Title="About"
+            Icon="about.png"
+            ContentTemplate="{DataTemplate views:AboutPage}" />
+    </TabBar>
+</Shell>

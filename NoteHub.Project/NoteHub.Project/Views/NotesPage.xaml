@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteHub.Project.Views.NotesPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Frame" x:Key="FrameStyle">
+                <Setter Property="BackgroundColor" Value="#D5DAB1" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="TitleLabel">
+                <Setter Property="TextColor" Value="#121212" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,0,0,5" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="TextLabel">
+                <Setter Property="TextColor" Value="#484848" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="0,0,0,5" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+                <Setter Property="MaxLines" Value="3" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="DateLabel">
+                <Setter Property="TextColor" Value="#767676" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="0,0,0,5" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddButton_Clicked" IconImageSource="create.png" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout
+            BackgroundColor="#FAFFD6">
+            <CollectionView x:Name="NotesView"
+                            Margin="10"
+                            SelectionMode="Single"
+                            SelectionChanged="OnSelectionNote_Changed">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     HorizontalItemSpacing="10"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Title}"
+                                       Style="{StaticResource TitleLabel}" />
+                                <Label Text="{Binding Text}"
+                                       Style="{StaticResource TextLabel}" />
+                                <Label Text="{Binding Date}"
+                                       Style="{StaticResource DateLabel}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteHub.Project.Views.AboutPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#FAFFD6">
+
+            <StackLayout>
+                <Label Text="About NoteHub"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       TextColor="#121212"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Margin="0,20,0,0">
+                <Label Text="Welcome to NoteHub!"
+                       TextColor="#121212"
+                       FontSize="Medium" />
+                <Label
+                    Text="NoteHub is designed to help you organize your notes and keep them in one place. You can create new notes, edit existing notes, and delete notes you no longer need. I hope you enjoy using my app and that it will be useful for your needs."
+                    TextColor="#262626"
+                    FontSize="Medium"
+                    Margin="0,10,0,0" />
+            </StackLayout>
+
+            <StackLayout Margin="0,40,0,0">
+                <Label Text="Follow me on social media:"
+                       FontSize="Medium"
+                       TextColor="#1C1C1C"
+                       FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal"
+                             Margin="0,10,0,0">
+                    <Image Source="linkedin.png"
+                           HeightRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLinkedinIcon_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="telegram.png"
+                           HeightRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTelegramIcon_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

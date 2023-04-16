@@ -1,0 +1,42 @@
+# Xamarin built application files
+*.apk
+*.ap_
+*.aab
+*.ipa
+*.zip
+*.msi
+*.nupkg
+
+# Build Folders (Xamarin Android)
+bin/
+obj/
+build/
+*.sln.ide
+*.suo
+*.userprefs
+
+# Build Folders (Xamarin iOS)
+bin/
+obj/
+*.userprefs
+*.suo
+
+# Debug files
+*.pdb
+*.mdb
+*.dll.mdb
+
+# Visual Studio files
+*.user
+*.suo
+*.sln.docstates
+*.suo
+*.cache
+*.vs/
+__resharper*
+*.csproj.user
+*.ide
+
+# macOS specific files
+.DS_Store
+.idea/
